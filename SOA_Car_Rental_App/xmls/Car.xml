@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<cars>
+	<car>
+		<car_id>01</car_id>
+		<make>ultima</make>	
+		<year>2007</year>
+		<model>charger</model>
+		<license_plate_no>IL001</license_plate_no>
+		<employee_id>e_01</employee_id>
+		<color>blue</color>
+	</car>
+	
+	<car>
+		<car_id>02</car_id>
+		<make>ford</make>	
+		<year>2008</year>
+		<model>charger</model>
+		<license_plate_no>IL002</license_plate_no>
+		<employee_id>e_02</employee_id>
+		<color>blue</color>
+	</car>
+</cars>
