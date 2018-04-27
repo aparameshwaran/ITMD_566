@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ITMD466/" targetNamespace="http://ITMD466/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Exception" type="tns:Exception" />
+  <xs:element name="listTransactions" type="tns:listTransactions" />
+  <xs:element name="listTransactionsResponse" type="tns:listTransactionsResponse" />
+  <xs:complexType name="listTransactions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="orderID" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listTransactionsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:transaction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="transaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="discount" type="xs:string" />
+      <xs:element minOccurs="0" name="employeeID" type="xs:string" />
+      <xs:element minOccurs="0" name="orderID" type="xs:string" />
+      <xs:element minOccurs="0" name="priceID" type="xs:string" />
+      <xs:element minOccurs="0" name="quantity" type="xs:string" />
+      <xs:element minOccurs="0" name="transactionAmount" type="xs:string" />
+      <xs:element minOccurs="0" name="transactionDate" type="xs:string" />
+      <xs:element minOccurs="0" name="transactionDescription" type="xs:string" />
+      <xs:element minOccurs="0" name="transactionID" type="xs:string" />
+      <xs:element minOccurs="0" name="truckID" type="xs:string" />
+      <xs:element minOccurs="0" name="unitPrice" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

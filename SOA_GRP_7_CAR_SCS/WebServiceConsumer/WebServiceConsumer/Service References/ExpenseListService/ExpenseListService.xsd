@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ITMD466/" targetNamespace="http://ITMD466/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Exception" type="tns:Exception" />
+  <xs:element name="paymentMethod" type="tns:paymentMethod" />
+  <xs:element name="paymentMethodResponse" type="tns:paymentMethodResponse" />
+  <xs:complexType name="paymentMethod">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="paymentMethod" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="paymentMethodResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:expense" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="expense">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="advanceAmount" type="xs:string" />
+      <xs:element minOccurs="0" name="amount" type="xs:string" />
+      <xs:element minOccurs="0" name="datePurchased" type="xs:string" />
+      <xs:element minOccurs="0" name="dateSubmitted" type="xs:string" />
+      <xs:element minOccurs="0" name="description" type="xs:string" />
+      <xs:element minOccurs="0" name="employeeID" type="xs:string" />
+      <xs:element minOccurs="0" name="expenseCategoty" type="xs:string" />
+      <xs:element minOccurs="0" name="expenseID" type="xs:string" />
+      <xs:element minOccurs="0" name="expenseType" type="xs:string" />
+      <xs:element minOccurs="0" name="paymentMethod" type="xs:string" />
+      <xs:element minOccurs="0" name="truckID" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

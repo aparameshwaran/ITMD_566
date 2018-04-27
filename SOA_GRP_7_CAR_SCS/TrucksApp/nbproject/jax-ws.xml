@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="CommentList">
+      <implementation-class>ITMD466.CommentListService</implementation-class>
+    </service>
+    <service name="EmployeeList">
+      <implementation-class>ITMD466.EmployeeListService</implementation-class>
+    </service>
+    <service name="ExpenseList">
+      <implementation-class>ITMD466.ExpenseListService</implementation-class>
+    </service>
+    <service name="TransactionList">
+      <implementation-class>ITMD466.TransactionListService</implementation-class>
+    </service>
+    <service name="TrucksListService">
+      <implementation-class>ITMD466.TrucksListService</implementation-class>
+    </service>
+    <service name="CustomerList">
+      <implementation-class>ITMD466.CustomerListService</implementation-class>
+    </service>
+    <service name="PriceList">
+      <implementation-class>ITMD466.PriceListService</implementation-class>
+    </service>
+    <service name="ItemList">
+      <implementation-class>ITMD466.ItemListService</implementation-class>
+    </service>
+    <service name="OrderList">
+      <implementation-class>ITMD466.OrderListService</implementation-class>
+    </service>
+    <service name="LocationList">
+      <implementation-class>ITMD466.LocationListService</implementation-class>
+    </service>
+  </services>
+  <clients/>
+</jax-ws>

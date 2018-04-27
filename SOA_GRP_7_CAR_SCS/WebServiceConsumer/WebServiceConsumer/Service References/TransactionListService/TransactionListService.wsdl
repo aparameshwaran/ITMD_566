@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://ITMD466/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="TransactionListService" targetNamespace="http://ITMD466/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/TrucksApp/TransactionListService?xsd=1" namespace="http://ITMD466/" />
+    </xsd:schema>
+  </types>
+  <message name="listTransactions">
+    <part name="parameters" element="tns:listTransactions" />
+  </message>
+  <message name="listTransactionsResponse">
+    <part name="parameters" element="tns:listTransactionsResponse" />
+  </message>
+  <message name="Exception">
+    <part name="fault" element="tns:Exception" />
+  </message>
+  <portType name="TransactionList">
+    <operation name="listTransactions">
+      <input wsam:Action="http://ITMD466/TransactionList/listTransactionsRequest" message="tns:listTransactions" />
+      <output wsam:Action="http://ITMD466/TransactionList/listTransactionsResponse" message="tns:listTransactionsResponse" />
+      <fault wsam:Action="http://ITMD466/TransactionList/listTransactions/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+  </portType>
+  <binding name="TransactionListPortBinding" type="tns:TransactionList">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listTransactions">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="TransactionListService">
+    <port name="TransactionListPort" binding="tns:TransactionListPortBinding">
+      <soap:address location="http://localhost:8080/TrucksApp/TransactionListService" />
+    </port>
+  </service>
+</definitions>

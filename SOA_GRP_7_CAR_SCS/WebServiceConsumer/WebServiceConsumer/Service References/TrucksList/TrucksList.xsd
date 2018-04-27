@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ITMD466/" targetNamespace="http://ITMD466/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Exception" type="tns:Exception" />
+  <xs:element name="listTrucks" type="tns:listTrucks" />
+  <xs:element name="listTrucksResponse" type="tns:listTrucksResponse" />
+  <xs:complexType name="listTrucks">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="employeeID" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listTrucksResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:truck" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="truck">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="color" type="xs:string" />
+      <xs:element minOccurs="0" name="cost" type="xs:string" />
+      <xs:element minOccurs="0" name="employeeID" type="xs:string" />
+      <xs:element minOccurs="0" name="licensePlateNumber" type="xs:string" />
+      <xs:element minOccurs="0" name="makeYear" type="xs:string" />
+      <xs:element minOccurs="0" name="model" type="xs:string" />
+      <xs:element minOccurs="0" name="truckID" type="xs:string" />
+      <xs:element minOccurs="0" name="VIN" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

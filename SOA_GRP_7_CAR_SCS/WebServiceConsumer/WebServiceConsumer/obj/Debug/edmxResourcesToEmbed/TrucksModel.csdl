@@ -1,0 +1,570 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="trucks_databaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="comment">
+    <Key>
+      <PropertyRef Name="commentID" />
+    </Key>
+    <Property Name="commentID" Type="Int32" Nullable="false" />
+    <Property Name="commentDateTime" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="comment1" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="locationID" Type="Int32" Nullable="false" />
+    <Property Name="customerID" Type="Int32" Nullable="false" />
+    <Property Name="transactionID" Type="Int32" Nullable="false" />
+    <Property Name="truckID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="location" Relationship="Self.comments_ibfk_1" FromRole="comments" ToRole="locations" />
+    <NavigationProperty Name="customer" Relationship="Self.comments_ibfk_2" FromRole="comments" ToRole="customers" />
+    <NavigationProperty Name="transaction" Relationship="Self.comments_ibfk_3" FromRole="comments" ToRole="transactions" />
+    <NavigationProperty Name="truck" Relationship="Self.comments_ibfk_4" FromRole="comments" ToRole="trucks" />
+  </EntityType>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="customerID" />
+    </Key>
+    <Property Name="customerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="customerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="state" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="billingAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="city" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="postalCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="country" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="phoneNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="faxNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="emailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="companyName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="contactName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="date" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="comments" Relationship="Self.comments_ibfk_2" FromRole="customers" ToRole="comments" />
+    <NavigationProperty Name="locations" Relationship="Self.locations_ibfk_1" FromRole="customers" ToRole="locations" />
+    <NavigationProperty Name="orders" Relationship="Self.orders_ibfk_3" FromRole="customers" ToRole="orders" />
+    <NavigationProperty Name="prices" Relationship="Self.prices_ibfk_2" FromRole="customers" ToRole="prices" />
+  </EntityType>
+  <EntityType Name="employee">
+    <Key>
+      <PropertyRef Name="employeeID" />
+    </Key>
+    <Property Name="employeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="firstName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="lastName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="extension" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="homePhone" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="cellPhone" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="jobTitle" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SSN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dirverLicenseNo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="city" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="state" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="postalCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="birthDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dateHired" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="salary" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="notes" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="expenses" Relationship="Self.expenses_ibfk_1" FromRole="employees" ToRole="expenses" />
+    <NavigationProperty Name="orders" Relationship="Self.orders_ibfk_2" FromRole="employees" ToRole="orders" />
+    <NavigationProperty Name="transactions" Relationship="Self.transactions_ibfk_4" FromRole="employees" ToRole="transactions" />
+    <NavigationProperty Name="trucks" Relationship="Self.trucks_ibfk_1" FromRole="employees" ToRole="trucks" />
+  </EntityType>
+  <EntityType Name="expens">
+    <Key>
+      <PropertyRef Name="expenseID" />
+    </Key>
+    <Property Name="expenseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="expenseType" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="expenseCategory" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="amount" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="datePurchased" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dateSubmitted" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="advanceAmount" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="paymentMethod" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="employee" Relationship="Self.expenses_ibfk_1" FromRole="expenses" ToRole="employees" />
+  </EntityType>
+  <EntityType Name="invoice">
+    <Key>
+      <PropertyRef Name="invoiceID" />
+    </Key>
+    <Property Name="invoiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="orderID" Type="Int32" Nullable="false" />
+    <Property Name="itemID" Type="Int32" Nullable="false" />
+    <Property Name="priceID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="order" Relationship="Self.invoices_ibfk_1" FromRole="invoices" ToRole="orders" />
+    <NavigationProperty Name="item" Relationship="Self.invoices_ibfk_2" FromRole="invoices" ToRole="items" />
+    <NavigationProperty Name="price" Relationship="Self.invoices_ibfk_3" FromRole="invoices" ToRole="prices" />
+  </EntityType>
+  <EntityType Name="item">
+    <Key>
+      <PropertyRef Name="itemID" />
+    </Key>
+    <Property Name="itemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="itemName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="itemDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="quantity" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="price" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="transactionID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="invoices" Relationship="Self.invoices_ibfk_2" FromRole="items" ToRole="invoices" />
+    <NavigationProperty Name="transaction" Relationship="Self.items_ibfk_1" FromRole="items" ToRole="transactions" />
+  </EntityType>
+  <EntityType Name="location">
+    <Key>
+      <PropertyRef Name="locationID" />
+    </Key>
+    <Property Name="locationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="locationName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="locationCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="addressStreet1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="addressStreet2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="city" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="state" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="postalCode" Type="Int32" Nullable="false" />
+    <Property Name="locationPhone" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="locationFaxNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="locationEmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="customerID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="comments" Relationship="Self.comments_ibfk_1" FromRole="locations" ToRole="comments" />
+    <NavigationProperty Name="customer" Relationship="Self.locations_ibfk_1" FromRole="locations" ToRole="customers" />
+    <NavigationProperty Name="prices" Relationship="Self.prices_ibfk_1" FromRole="locations" ToRole="prices" />
+  </EntityType>
+  <EntityType Name="order">
+    <Key>
+      <PropertyRef Name="orderID" />
+    </Key>
+    <Property Name="orderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="orderDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="isSpecial" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PONumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="orderTotalAmount" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="truckID" Type="Int32" Nullable="false" />
+    <Property Name="employeeID" Type="Int32" Nullable="false" />
+    <Property Name="customerID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="customer" Relationship="Self.orders_ibfk_3" FromRole="orders" ToRole="customers" />
+    <NavigationProperty Name="employee" Relationship="Self.orders_ibfk_2" FromRole="orders" ToRole="employees" />
+    <NavigationProperty Name="invoices" Relationship="Self.invoices_ibfk_1" FromRole="orders" ToRole="invoices" />
+    <NavigationProperty Name="truck" Relationship="Self.orders_ibfk_1" FromRole="orders" ToRole="trucks" />
+    <NavigationProperty Name="payments" Relationship="Self.payments_ibfk_1" FromRole="orders" ToRole="payments" />
+    <NavigationProperty Name="transactions" Relationship="Self.transactions_ibfk_1" FromRole="orders" ToRole="transactions" />
+  </EntityType>
+  <EntityType Name="payment">
+    <Key>
+      <PropertyRef Name="paymentID" />
+    </Key>
+    <Property Name="paymentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="paymentAmount" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="paymentDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="checknumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="creditcardID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="creditcardNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cardHolderName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="creditcardExpDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="creditCardAuthNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="orderID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="order" Relationship="Self.payments_ibfk_1" FromRole="payments" ToRole="orders" />
+  </EntityType>
+  <EntityType Name="price">
+    <Key>
+      <PropertyRef Name="priceID" />
+    </Key>
+    <Property Name="priceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="locationIDFrom" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="locationIDTo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="price1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="locationCodeFrom" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="locationCodeTo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="locationID" Type="Int32" Nullable="false" />
+    <Property Name="customerID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="customer" Relationship="Self.prices_ibfk_2" FromRole="prices" ToRole="customers" />
+    <NavigationProperty Name="invoices" Relationship="Self.invoices_ibfk_3" FromRole="prices" ToRole="invoices" />
+    <NavigationProperty Name="location" Relationship="Self.prices_ibfk_1" FromRole="prices" ToRole="locations" />
+    <NavigationProperty Name="transactions" Relationship="Self.transactions_ibfk_2" FromRole="prices" ToRole="transactions" />
+  </EntityType>
+  <EntityType Name="transaction">
+    <Key>
+      <PropertyRef Name="transactionID" />
+    </Key>
+    <Property Name="transactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="transactionDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="transactionDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="transactionAmount" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="discount" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="unitPrice" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="quantity" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="orderID" Type="Int32" Nullable="false" />
+    <Property Name="priceID" Type="Int32" Nullable="false" />
+    <Property Name="truckID" Type="Int32" Nullable="false" />
+    <Property Name="employeeID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="comments" Relationship="Self.comments_ibfk_3" FromRole="transactions" ToRole="comments" />
+    <NavigationProperty Name="employee" Relationship="Self.transactions_ibfk_4" FromRole="transactions" ToRole="employees" />
+    <NavigationProperty Name="items" Relationship="Self.items_ibfk_1" FromRole="transactions" ToRole="items" />
+    <NavigationProperty Name="order" Relationship="Self.transactions_ibfk_1" FromRole="transactions" ToRole="orders" />
+    <NavigationProperty Name="price" Relationship="Self.transactions_ibfk_2" FromRole="transactions" ToRole="prices" />
+    <NavigationProperty Name="truck" Relationship="Self.transactions_ibfk_3" FromRole="transactions" ToRole="trucks" />
+  </EntityType>
+  <EntityType Name="truck">
+    <Key>
+      <PropertyRef Name="truckID" />
+    </Key>
+    <Property Name="truckID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VIN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="makeYear" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="model" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="licensePlateNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="color" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cost" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="comments" Relationship="Self.comments_ibfk_4" FromRole="trucks" ToRole="comments" />
+    <NavigationProperty Name="employee" Relationship="Self.trucks_ibfk_1" FromRole="trucks" ToRole="employees" />
+    <NavigationProperty Name="orders" Relationship="Self.orders_ibfk_1" FromRole="trucks" ToRole="orders" />
+    <NavigationProperty Name="transactions" Relationship="Self.transactions_ibfk_3" FromRole="trucks" ToRole="transactions" />
+  </EntityType>
+  <Association Name="comments_ibfk_1">
+    <End Role="locations" Type="Self.location" Multiplicity="1" />
+    <End Role="comments" Type="Self.comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="locations">
+        <PropertyRef Name="locationID" />
+      </Principal>
+      <Dependent Role="comments">
+        <PropertyRef Name="locationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="comments_ibfk_2">
+    <End Role="customers" Type="Self.customer" Multiplicity="1" />
+    <End Role="comments" Type="Self.comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customers">
+        <PropertyRef Name="customerID" />
+      </Principal>
+      <Dependent Role="comments">
+        <PropertyRef Name="customerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="comments_ibfk_3">
+    <End Role="transactions" Type="Self.transaction" Multiplicity="1" />
+    <End Role="comments" Type="Self.comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="transactions">
+        <PropertyRef Name="transactionID" />
+      </Principal>
+      <Dependent Role="comments">
+        <PropertyRef Name="transactionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="comments_ibfk_4">
+    <End Role="trucks" Type="Self.truck" Multiplicity="1" />
+    <End Role="comments" Type="Self.comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="trucks">
+        <PropertyRef Name="truckID" />
+      </Principal>
+      <Dependent Role="comments">
+        <PropertyRef Name="truckID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="locations_ibfk_1">
+    <End Role="customers" Type="Self.customer" Multiplicity="1" />
+    <End Role="locations" Type="Self.location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customers">
+        <PropertyRef Name="customerID" />
+      </Principal>
+      <Dependent Role="locations">
+        <PropertyRef Name="customerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="orders_ibfk_3">
+    <End Role="customers" Type="Self.customer" Multiplicity="1" />
+    <End Role="orders" Type="Self.order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customers">
+        <PropertyRef Name="customerID" />
+      </Principal>
+      <Dependent Role="orders">
+        <PropertyRef Name="customerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="prices_ibfk_2">
+    <End Role="customers" Type="Self.customer" Multiplicity="1" />
+    <End Role="prices" Type="Self.price" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customers">
+        <PropertyRef Name="customerID" />
+      </Principal>
+      <Dependent Role="prices">
+        <PropertyRef Name="customerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="expenses_ibfk_1">
+    <End Role="employees" Type="Self.employee" Multiplicity="1" />
+    <End Role="expenses" Type="Self.expens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employees">
+        <PropertyRef Name="employeeID" />
+      </Principal>
+      <Dependent Role="expenses">
+        <PropertyRef Name="employeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="orders_ibfk_2">
+    <End Role="employees" Type="Self.employee" Multiplicity="1" />
+    <End Role="orders" Type="Self.order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employees">
+        <PropertyRef Name="employeeID" />
+      </Principal>
+      <Dependent Role="orders">
+        <PropertyRef Name="employeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="transactions_ibfk_4">
+    <End Role="employees" Type="Self.employee" Multiplicity="1" />
+    <End Role="transactions" Type="Self.transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employees">
+        <PropertyRef Name="employeeID" />
+      </Principal>
+      <Dependent Role="transactions">
+        <PropertyRef Name="employeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="trucks_ibfk_1">
+    <End Role="employees" Type="Self.employee" Multiplicity="1" />
+    <End Role="trucks" Type="Self.truck" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employees">
+        <PropertyRef Name="employeeID" />
+      </Principal>
+      <Dependent Role="trucks">
+        <PropertyRef Name="employeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="invoices_ibfk_1">
+    <End Role="orders" Type="Self.order" Multiplicity="1" />
+    <End Role="invoices" Type="Self.invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="orders">
+        <PropertyRef Name="orderID" />
+      </Principal>
+      <Dependent Role="invoices">
+        <PropertyRef Name="orderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="invoices_ibfk_2">
+    <End Role="items" Type="Self.item" Multiplicity="1" />
+    <End Role="invoices" Type="Self.invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="items">
+        <PropertyRef Name="itemID" />
+      </Principal>
+      <Dependent Role="invoices">
+        <PropertyRef Name="itemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="invoices_ibfk_3">
+    <End Role="prices" Type="Self.price" Multiplicity="1" />
+    <End Role="invoices" Type="Self.invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="prices">
+        <PropertyRef Name="priceID" />
+      </Principal>
+      <Dependent Role="invoices">
+        <PropertyRef Name="priceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="items_ibfk_1">
+    <End Role="transactions" Type="Self.transaction" Multiplicity="1" />
+    <End Role="items" Type="Self.item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="transactions">
+        <PropertyRef Name="transactionID" />
+      </Principal>
+      <Dependent Role="items">
+        <PropertyRef Name="transactionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="prices_ibfk_1">
+    <End Role="locations" Type="Self.location" Multiplicity="1" />
+    <End Role="prices" Type="Self.price" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="locations">
+        <PropertyRef Name="locationID" />
+      </Principal>
+      <Dependent Role="prices">
+        <PropertyRef Name="locationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="orders_ibfk_1">
+    <End Role="trucks" Type="Self.truck" Multiplicity="1" />
+    <End Role="orders" Type="Self.order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="trucks">
+        <PropertyRef Name="truckID" />
+      </Principal>
+      <Dependent Role="orders">
+        <PropertyRef Name="truckID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="payments_ibfk_1">
+    <End Role="orders" Type="Self.order" Multiplicity="1" />
+    <End Role="payments" Type="Self.payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="orders">
+        <PropertyRef Name="orderID" />
+      </Principal>
+      <Dependent Role="payments">
+        <PropertyRef Name="orderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="transactions_ibfk_1">
+    <End Role="orders" Type="Self.order" Multiplicity="1" />
+    <End Role="transactions" Type="Self.transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="orders">
+        <PropertyRef Name="orderID" />
+      </Principal>
+      <Dependent Role="transactions">
+        <PropertyRef Name="orderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="transactions_ibfk_2">
+    <End Role="prices" Type="Self.price" Multiplicity="1" />
+    <End Role="transactions" Type="Self.transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="prices">
+        <PropertyRef Name="priceID" />
+      </Principal>
+      <Dependent Role="transactions">
+        <PropertyRef Name="priceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="transactions_ibfk_3">
+    <End Role="trucks" Type="Self.truck" Multiplicity="1" />
+    <End Role="transactions" Type="Self.transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="trucks">
+        <PropertyRef Name="truckID" />
+      </Principal>
+      <Dependent Role="transactions">
+        <PropertyRef Name="truckID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="trucks_databaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="comments" EntityType="Self.comment" />
+    <EntitySet Name="customers" EntityType="Self.customer" />
+    <EntitySet Name="employees" EntityType="Self.employee" />
+    <EntitySet Name="expenses" EntityType="Self.expens" />
+    <EntitySet Name="invoices" EntityType="Self.invoice" />
+    <EntitySet Name="items" EntityType="Self.item" />
+    <EntitySet Name="locations" EntityType="Self.location" />
+    <EntitySet Name="orders" EntityType="Self.order" />
+    <EntitySet Name="payments" EntityType="Self.payment" />
+    <EntitySet Name="prices" EntityType="Self.price" />
+    <EntitySet Name="transactions" EntityType="Self.transaction" />
+    <EntitySet Name="trucks" EntityType="Self.truck" />
+    <AssociationSet Name="comments_ibfk_1" Association="Self.comments_ibfk_1">
+      <End Role="locations" EntitySet="locations" />
+      <End Role="comments" EntitySet="comments" />
+    </AssociationSet>
+    <AssociationSet Name="comments_ibfk_2" Association="Self.comments_ibfk_2">
+      <End Role="customers" EntitySet="customers" />
+      <End Role="comments" EntitySet="comments" />
+    </AssociationSet>
+    <AssociationSet Name="comments_ibfk_3" Association="Self.comments_ibfk_3">
+      <End Role="transactions" EntitySet="transactions" />
+      <End Role="comments" EntitySet="comments" />
+    </AssociationSet>
+    <AssociationSet Name="comments_ibfk_4" Association="Self.comments_ibfk_4">
+      <End Role="trucks" EntitySet="trucks" />
+      <End Role="comments" EntitySet="comments" />
+    </AssociationSet>
+    <AssociationSet Name="locations_ibfk_1" Association="Self.locations_ibfk_1">
+      <End Role="customers" EntitySet="customers" />
+      <End Role="locations" EntitySet="locations" />
+    </AssociationSet>
+    <AssociationSet Name="orders_ibfk_3" Association="Self.orders_ibfk_3">
+      <End Role="customers" EntitySet="customers" />
+      <End Role="orders" EntitySet="orders" />
+    </AssociationSet>
+    <AssociationSet Name="prices_ibfk_2" Association="Self.prices_ibfk_2">
+      <End Role="customers" EntitySet="customers" />
+      <End Role="prices" EntitySet="prices" />
+    </AssociationSet>
+    <AssociationSet Name="expenses_ibfk_1" Association="Self.expenses_ibfk_1">
+      <End Role="employees" EntitySet="employees" />
+      <End Role="expenses" EntitySet="expenses" />
+    </AssociationSet>
+    <AssociationSet Name="orders_ibfk_2" Association="Self.orders_ibfk_2">
+      <End Role="employees" EntitySet="employees" />
+      <End Role="orders" EntitySet="orders" />
+    </AssociationSet>
+    <AssociationSet Name="transactions_ibfk_4" Association="Self.transactions_ibfk_4">
+      <End Role="employees" EntitySet="employees" />
+      <End Role="transactions" EntitySet="transactions" />
+    </AssociationSet>
+    <AssociationSet Name="trucks_ibfk_1" Association="Self.trucks_ibfk_1">
+      <End Role="employees" EntitySet="employees" />
+      <End Role="trucks" EntitySet="trucks" />
+    </AssociationSet>
+    <AssociationSet Name="invoices_ibfk_1" Association="Self.invoices_ibfk_1">
+      <End Role="orders" EntitySet="orders" />
+      <End Role="invoices" EntitySet="invoices" />
+    </AssociationSet>
+    <AssociationSet Name="invoices_ibfk_2" Association="Self.invoices_ibfk_2">
+      <End Role="items" EntitySet="items" />
+      <End Role="invoices" EntitySet="invoices" />
+    </AssociationSet>
+    <AssociationSet Name="invoices_ibfk_3" Association="Self.invoices_ibfk_3">
+      <End Role="prices" EntitySet="prices" />
+      <End Role="invoices" EntitySet="invoices" />
+    </AssociationSet>
+    <AssociationSet Name="items_ibfk_1" Association="Self.items_ibfk_1">
+      <End Role="transactions" EntitySet="transactions" />
+      <End Role="items" EntitySet="items" />
+    </AssociationSet>
+    <AssociationSet Name="prices_ibfk_1" Association="Self.prices_ibfk_1">
+      <End Role="locations" EntitySet="locations" />
+      <End Role="prices" EntitySet="prices" />
+    </AssociationSet>
+    <AssociationSet Name="orders_ibfk_1" Association="Self.orders_ibfk_1">
+      <End Role="trucks" EntitySet="trucks" />
+      <End Role="orders" EntitySet="orders" />
+    </AssociationSet>
+    <AssociationSet Name="payments_ibfk_1" Association="Self.payments_ibfk_1">
+      <End Role="orders" EntitySet="orders" />
+      <End Role="payments" EntitySet="payments" />
+    </AssociationSet>
+    <AssociationSet Name="transactions_ibfk_1" Association="Self.transactions_ibfk_1">
+      <End Role="orders" EntitySet="orders" />
+      <End Role="transactions" EntitySet="transactions" />
+    </AssociationSet>
+    <AssociationSet Name="transactions_ibfk_2" Association="Self.transactions_ibfk_2">
+      <End Role="prices" EntitySet="prices" />
+      <End Role="transactions" EntitySet="transactions" />
+    </AssociationSet>
+    <AssociationSet Name="transactions_ibfk_3" Association="Self.transactions_ibfk_3">
+      <End Role="trucks" EntitySet="trucks" />
+      <End Role="transactions" EntitySet="transactions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

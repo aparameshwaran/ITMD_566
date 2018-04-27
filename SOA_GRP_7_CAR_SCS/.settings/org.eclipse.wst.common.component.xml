@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="ITMD566_Group15_SOA-master">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/TrucksApp/src/java"/>
+        <property name="context-root" value="ITMD566_Group15_SOA-master"/>
+        <property name="java-output-path" value="/ITMD566_Group15_SOA-master/TrucksApp/build/web/WEB-INF/classes"/>
+    </wb-module>
+</project-modules>

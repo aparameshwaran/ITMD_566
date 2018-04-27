@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="trucks_databaseModelStoreContainer" CdmEntityContainer="trucks_databaseEntities">
+    <EntitySetMapping Name="comments">
+      <EntityTypeMapping TypeName="trucks_databaseModel.comment">
+        <MappingFragment StoreEntitySet="comments">
+          <ScalarProperty Name="commentID" ColumnName="commentID" />
+          <ScalarProperty Name="commentDateTime" ColumnName="commentDateTime" />
+          <ScalarProperty Name="comment1" ColumnName="comment" />
+          <ScalarProperty Name="locationID" ColumnName="locationID" />
+          <ScalarProperty Name="customerID" ColumnName="customerID" />
+          <ScalarProperty Name="transactionID" ColumnName="transactionID" />
+          <ScalarProperty Name="truckID" ColumnName="truckID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customers">
+      <EntityTypeMapping TypeName="trucks_databaseModel.customer">
+        <MappingFragment StoreEntitySet="customers">
+          <ScalarProperty Name="customerID" ColumnName="customerID" />
+          <ScalarProperty Name="customerName" ColumnName="customerName" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="billingAddress" ColumnName="billingAddress" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="postalCode" ColumnName="postalCode" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+          <ScalarProperty Name="faxNumber" ColumnName="faxNumber" />
+          <ScalarProperty Name="emailAddress" ColumnName="emailAddress" />
+          <ScalarProperty Name="companyName" ColumnName="companyName" />
+          <ScalarProperty Name="contactName" ColumnName="contactName" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="employees">
+      <EntityTypeMapping TypeName="trucks_databaseModel.employee">
+        <MappingFragment StoreEntitySet="employees">
+          <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="extension" ColumnName="extension" />
+          <ScalarProperty Name="homePhone" ColumnName="homePhone" />
+          <ScalarProperty Name="cellPhone" ColumnName="cellPhone" />
+          <ScalarProperty Name="jobTitle" ColumnName="jobTitle" />
+          <ScalarProperty Name="SSN" ColumnName="SSN" />
+          <ScalarProperty Name="dirverLicenseNo" ColumnName="dirverLicenseNo" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="postalCode" ColumnName="postalCode" />
+          <ScalarProperty Name="birthDate" ColumnName="birthDate" />
+          <ScalarProperty Name="dateHired" ColumnName="dateHired" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="expenses">
+      <EntityTypeMapping TypeName="trucks_databaseModel.expens">
+        <MappingFragment StoreEntitySet="expenses">
+          <ScalarProperty Name="expenseID" ColumnName="expenseID" />
+          <ScalarProperty Name="expenseType" ColumnName="expenseType" />
+          <ScalarProperty Name="expenseCategory" ColumnName="expenseCategory" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="datePurchased" ColumnName="datePurchased" />
+          <ScalarProperty Name="dateSubmitted" ColumnName="dateSubmitted" />
+          <ScalarProperty Name="advanceAmount" ColumnName="advanceAmount" />
+          <ScalarProperty Name="paymentMethod" ColumnName="paymentMethod" />
+          <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="invoices">
+      <EntityTypeMapping TypeName="trucks_databaseModel.invoice">
+        <MappingFragment StoreEntitySet="invoices">
+          <ScalarProperty Name="invoiceID" ColumnName="invoiceID" />
+          <ScalarProperty Name="orderID" ColumnName="orderID" />
+          <ScalarProperty Name="itemID" ColumnName="itemID" />
+          <ScalarProperty Name="priceID" ColumnName="priceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="items">
+      <EntityTypeMapping TypeName="trucks_databaseModel.item">
+        <MappingFragment StoreEntitySet="items">
+          <ScalarProperty Name="itemID" ColumnName="itemID" />
+          <ScalarProperty Name="itemName" ColumnName="itemName" />
+          <ScalarProperty Name="itemDescription" ColumnName="itemDescription" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="transactionID" ColumnName="transactionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="locations">
+      <EntityTypeMapping TypeName="trucks_databaseModel.location">
+        <MappingFragment StoreEntitySet="locations">
+          <ScalarProperty Name="locationID" ColumnName="locationID" />
+          <ScalarProperty Name="locationName" ColumnName="locationName" />
+          <ScalarProperty Name="locationCode" ColumnName="locationCode" />
+          <ScalarProperty Name="addressStreet1" ColumnName="addressStreet1" />
+          <ScalarProperty Name="addressStreet2" ColumnName="addressStreet2" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="postalCode" ColumnName="postalCode" />
+          <ScalarProperty Name="locationPhone" ColumnName="locationPhone" />
+          <ScalarProperty Name="locationFaxNumber" ColumnName="locationFaxNumber" />
+          <ScalarProperty Name="locationEmailAddress" ColumnName="locationEmailAddress" />
+          <ScalarProperty Name="customerID" ColumnName="customerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orders">
+      <EntityTypeMapping TypeName="trucks_databaseModel.order">
+        <MappingFragment StoreEntitySet="orders">
+          <ScalarProperty Name="orderID" ColumnName="orderID" />
+          <ScalarProperty Name="orderDate" ColumnName="orderDate" />
+          <ScalarProperty Name="isSpecial" ColumnName="isSpecial" />
+          <ScalarProperty Name="PONumber" ColumnName="PONumber" />
+          <ScalarProperty Name="orderTotalAmount" ColumnName="orderTotalAmount" />
+          <ScalarProperty Name="truckID" ColumnName="truckID" />
+          <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+          <ScalarProperty Name="customerID" ColumnName="customerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="payments">
+      <EntityTypeMapping TypeName="trucks_databaseModel.payment">
+        <MappingFragment StoreEntitySet="payments">
+          <ScalarProperty Name="paymentID" ColumnName="paymentID" />
+          <ScalarProperty Name="paymentAmount" ColumnName="paymentAmount" />
+          <ScalarProperty Name="paymentDate" ColumnName="paymentDate" />
+          <ScalarProperty Name="checknumber" ColumnName="checknumber" />
+          <ScalarProperty Name="creditcardID" ColumnName="creditcardID" />
+          <ScalarProperty Name="creditcardNumber" ColumnName="creditcardNumber" />
+          <ScalarProperty Name="cardHolderName" ColumnName="cardHolderName" />
+          <ScalarProperty Name="creditcardExpDate" ColumnName="creditcardExpDate" />
+          <ScalarProperty Name="creditCardAuthNumber" ColumnName="creditCardAuthNumber" />
+          <ScalarProperty Name="orderID" ColumnName="orderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="prices">
+      <EntityTypeMapping TypeName="trucks_databaseModel.price">
+        <MappingFragment StoreEntitySet="prices">
+          <ScalarProperty Name="priceID" ColumnName="priceID" />
+          <ScalarProperty Name="locationIDFrom" ColumnName="locationIDFrom" />
+          <ScalarProperty Name="locationIDTo" ColumnName="locationIDTo" />
+          <ScalarProperty Name="price1" ColumnName="price" />
+          <ScalarProperty Name="locationCodeFrom" ColumnName="locationCodeFrom" />
+          <ScalarProperty Name="locationCodeTo" ColumnName="locationCodeTo" />
+          <ScalarProperty Name="locationID" ColumnName="locationID" />
+          <ScalarProperty Name="customerID" ColumnName="customerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transactions">
+      <EntityTypeMapping TypeName="trucks_databaseModel.transaction">
+        <MappingFragment StoreEntitySet="transactions">
+          <ScalarProperty Name="transactionID" ColumnName="transactionID" />
+          <ScalarProperty Name="transactionDate" ColumnName="transactionDate" />
+          <ScalarProperty Name="transactionDescription" ColumnName="transactionDescription" />
+          <ScalarProperty Name="transactionAmount" ColumnName="transactionAmount" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="unitPrice" ColumnName="unitPrice" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="orderID" ColumnName="orderID" />
+          <ScalarProperty Name="priceID" ColumnName="priceID" />
+          <ScalarProperty Name="truckID" ColumnName="truckID" />
+          <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="trucks">
+      <EntityTypeMapping TypeName="trucks_databaseModel.truck">
+        <MappingFragment StoreEntitySet="trucks">
+          <ScalarProperty Name="truckID" ColumnName="truckID" />
+          <ScalarProperty Name="VIN" ColumnName="VIN" />
+          <ScalarProperty Name="makeYear" ColumnName="makeYear" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="licensePlateNumber" ColumnName="licensePlateNumber" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+          <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

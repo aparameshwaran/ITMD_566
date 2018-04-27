@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ITMD466/" targetNamespace="http://ITMD466/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Exception" type="tns:Exception" />
+  <xs:element name="listLocations" type="tns:listLocations" />
+  <xs:element name="listLocationsResponse" type="tns:listLocationsResponse" />
+  <xs:complexType name="listLocations">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="locationCode" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listLocationsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:location" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="location">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="addressStreet1" type="xs:string" />
+      <xs:element minOccurs="0" name="addressStreet2" type="xs:string" />
+      <xs:element minOccurs="0" name="city" type="xs:string" />
+      <xs:element minOccurs="0" name="customerID" type="xs:string" />
+      <xs:element minOccurs="0" name="isAuction" type="xs:string" />
+      <xs:element minOccurs="0" name="locationCode" type="xs:string" />
+      <xs:element minOccurs="0" name="locationContactName" type="xs:string" />
+      <xs:element minOccurs="0" name="locationEmail" type="xs:string" />
+      <xs:element minOccurs="0" name="locationFaxNumber" type="xs:string" />
+      <xs:element minOccurs="0" name="locationID" type="xs:string" />
+      <xs:element minOccurs="0" name="locationName" type="xs:string" />
+      <xs:element minOccurs="0" name="locationPhone" type="xs:string" />
+      <xs:element minOccurs="0" name="postalcode" type="xs:string" />
+      <xs:element minOccurs="0" name="state" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

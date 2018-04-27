@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://ITMD466/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="PriceListService" targetNamespace="http://ITMD466/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/TrucksApp/PriceListService?xsd=1" namespace="http://ITMD466/" />
+    </xsd:schema>
+  </types>
+  <message name="listPrices">
+    <part name="parameters" element="tns:listPrices" />
+  </message>
+  <message name="listPricesResponse">
+    <part name="parameters" element="tns:listPricesResponse" />
+  </message>
+  <message name="Exception">
+    <part name="fault" element="tns:Exception" />
+  </message>
+  <portType name="PriceList">
+    <operation name="listPrices">
+      <input wsam:Action="http://ITMD466/PriceList/listPricesRequest" message="tns:listPrices" />
+      <output wsam:Action="http://ITMD466/PriceList/listPricesResponse" message="tns:listPricesResponse" />
+      <fault wsam:Action="http://ITMD466/PriceList/listPrices/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+  </portType>
+  <binding name="PriceListPortBinding" type="tns:PriceList">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listPrices">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="PriceListService">
+    <port name="PriceListPort" binding="tns:PriceListPortBinding">
+      <soap:address location="http://localhost:8080/TrucksApp/PriceListService" />
+    </port>
+  </service>
+</definitions>

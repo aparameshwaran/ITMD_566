@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ITMD466/" targetNamespace="http://ITMD466/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Exception" type="tns:Exception" />
+  <xs:element name="listPrices" type="tns:listPrices" />
+  <xs:element name="listPricesResponse" type="tns:listPricesResponse" />
+  <xs:complexType name="listPrices">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="priceID" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listPricesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:price" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="price">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerID" type="xs:string" />
+      <xs:element minOccurs="0" name="locationCodeFrom" type="xs:string" />
+      <xs:element minOccurs="0" name="locationCodeTo" type="xs:string" />
+      <xs:element minOccurs="0" name="locationID" type="xs:string" />
+      <xs:element minOccurs="0" name="locationIDFrom" type="xs:string" />
+      <xs:element minOccurs="0" name="locationIDTo" type="xs:string" />
+      <xs:element minOccurs="0" name="price" type="xs:string" />
+      <xs:element minOccurs="0" name="priceID" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

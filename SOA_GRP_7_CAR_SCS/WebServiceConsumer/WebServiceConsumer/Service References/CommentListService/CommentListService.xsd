@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ITMD466/" targetNamespace="http://ITMD466/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Exception" type="tns:Exception" />
+  <xs:element name="TransactionID" type="tns:TransactionID" />
+  <xs:element name="TransactionIDResponse" type="tns:TransactionIDResponse" />
+  <xs:complexType name="TransactionID">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="transactionID" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TransactionIDResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:comment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="comment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="commentDateTime" type="xs:string" />
+      <xs:element minOccurs="0" name="commentID" type="xs:string" />
+      <xs:element minOccurs="0" name="customerID" type="xs:string" />
+      <xs:element minOccurs="0" name="locationID" type="xs:string" />
+      <xs:element minOccurs="0" name="transactionID" type="xs:string" />
+      <xs:element minOccurs="0" name="truckID" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

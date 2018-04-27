@@ -1,0 +1,14 @@
+C:\Users\Ravi Kumar Hazare\source\repos\WebServiceConsumer\WebServiceConsumer\obj\Release\WebServiceConsumer.csproj.CoreCompileInputs.cache
+C:\Users\Ravi Kumar Hazare\source\repos\WebServiceConsumer\WebServiceConsumer\bin\WebServiceConsumer.dll.config
+C:\Users\Ravi Kumar Hazare\source\repos\WebServiceConsumer\WebServiceConsumer\bin\WebServiceConsumer.dll
+C:\Users\Ravi Kumar Hazare\source\repos\WebServiceConsumer\WebServiceConsumer\bin\WebServiceConsumer.pdb
+C:\Users\Ravi Kumar Hazare\source\repos\WebServiceConsumer\WebServiceConsumer\bin\EntityFramework.dll
+C:\Users\Ravi Kumar Hazare\source\repos\WebServiceConsumer\WebServiceConsumer\bin\EntityFramework.SqlServer.dll
+C:\Users\Ravi Kumar Hazare\source\repos\WebServiceConsumer\WebServiceConsumer\bin\MySql.Data.dll
+C:\Users\Ravi Kumar Hazare\source\repos\WebServiceConsumer\WebServiceConsumer\bin\mysql.data.entity.EF6.dll
+C:\Users\Ravi Kumar Hazare\source\repos\WebServiceConsumer\WebServiceConsumer\bin\MySql.Web.dll
+C:\Users\Ravi Kumar Hazare\source\repos\WebServiceConsumer\WebServiceConsumer\bin\EntityFramework.xml
+C:\Users\Ravi Kumar Hazare\source\repos\WebServiceConsumer\WebServiceConsumer\bin\EntityFramework.SqlServer.xml
+C:\Users\Ravi Kumar Hazare\source\repos\WebServiceConsumer\WebServiceConsumer\obj\Release\WebServiceConsumer.dll
+C:\Users\Ravi Kumar Hazare\source\repos\WebServiceConsumer\WebServiceConsumer\obj\Release\WebServiceConsumer.pdb
+C:\Users\Ravi Kumar Hazare\source\repos\WebServiceConsumer\WebServiceConsumer\obj\Release\WebServiceConsumer.csprojResolveAssemblyReference.cache

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ITMD466/" targetNamespace="http://ITMD466/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Exception" type="tns:Exception" />
+  <xs:element name="listCustomers" type="tns:listCustomers" />
+  <xs:element name="listCustomersResponse" type="tns:listCustomersResponse" />
+  <xs:complexType name="listCustomers">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="city" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listCustomersResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:customer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="customer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="billingAddress" type="xs:string" />
+      <xs:element minOccurs="0" name="businessName" type="xs:string" />
+      <xs:element minOccurs="0" name="city" type="xs:string" />
+      <xs:element minOccurs="0" name="companyName" type="xs:string" />
+      <xs:element minOccurs="0" name="contactName" type="xs:string" />
+      <xs:element minOccurs="0" name="country" type="xs:string" />
+      <xs:element minOccurs="0" name="customerID" type="xs:string" />
+      <xs:element minOccurs="0" name="customerName" type="xs:string" />
+      <xs:element minOccurs="0" name="customerType" type="xs:string" />
+      <xs:element minOccurs="0" name="date" type="xs:string" />
+      <xs:element minOccurs="0" name="emailAddress" type="xs:string" />
+      <xs:element minOccurs="0" name="faxNumber" type="xs:string" />
+      <xs:element minOccurs="0" name="otherNumber" type="xs:string" />
+      <xs:element minOccurs="0" name="phoneNumber" type="xs:string" />
+      <xs:element minOccurs="0" name="postalCode" type="xs:string" />
+      <xs:element minOccurs="0" name="state" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
